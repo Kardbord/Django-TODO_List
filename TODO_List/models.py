@@ -7,5 +7,5 @@ from django.db import models
 class TODO_Item(models.Model):
     description = models.CharField('Description', max_length=200)
     title = models.CharField('Title', max_length=50)
-    due_date = models.DateField('Due_Date')
+    due_date = models.DateField('Due Date')
     # TODO: add priority
