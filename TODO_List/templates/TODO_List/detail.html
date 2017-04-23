@@ -12,7 +12,7 @@
 
 <h3>Due on {{ todo_item.due_date }}</h3>
 
-{% if  todo_item.isCompleted %}
+{% if todo_item.isCompleted == true %}
     <h3 class="completed">Completed</h3>
 {% else %}
     <h3 class="incomplete">Incomplete</h3>
