@@ -1,0 +1,9 @@
+{% if todo_list %}
+    <ul>
+    {% for todo_item in todo_list %}
+        <li><a href="/todo/{{ todo_item.id }}/">{{ todo_item.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have nothing to do! :)</p>
+{% endif %}
