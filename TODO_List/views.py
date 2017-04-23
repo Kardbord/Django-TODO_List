@@ -24,4 +24,4 @@ def detail(request, todo_id):
     
     
 def new(request):
-    return HttpResponse("You are adding a todo entry")
+    return render(request, 'TODO_List/new.html')
