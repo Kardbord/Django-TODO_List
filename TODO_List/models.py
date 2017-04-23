@@ -12,7 +12,7 @@ PRIORITIES = (
 
 class TODO_Item(models.Model):
     description = models.TextField('Description', max_length=300)
-    title = models.CharField('Title', max_length=50)
+    title = models.CharField('Title', max_length=100)
     due_date = models.DateTimeField('Due Date')
     isComplete = models.BooleanField('is completed', default=False)
     priority = models.CharField(max_length=3, choices=PRIORITIES)
