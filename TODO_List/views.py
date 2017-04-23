@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
-from .models import TODO_Item
+from .models import TODO_Item, TODO_Item_Form
 
 # Create your views here.
 
@@ -24,4 +24,14 @@ def detail(request, todo_id):
     
     
 def new(request):
-    return render(request, 'TODO_List/new.html')
+    if request.method == 'POST':
+        form = TODO_Item_Form(request.POST)
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect('TODO_List:index')
+    else:
+        form = TODO_Item_Form()
+    
+    return render(request, 'TODO_List/new.html', {'form': form})
