@@ -1,1 +1,21 @@
-{{ todo_item }}
+<h1>{{ todo_item.title }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% if todo_item.priority == "HIG" %}
+    <h2 class="High">!!!High Priority!!!</h2>
+{% elif todo_item.priority == "MED" %}
+    <h2 class="Med">***Medium Priority***</h2>
+{% elif todo_item.priority == "LOW" %}
+    <h2 class="Low">Low Priority</h2>
+{% endif %}
+
+<h3>Due on {{ todo_item.due_date }}</h3>
+
+{% if  todo_item.isCompleted %}
+    <h3 class="completed">Completed</h3>
+{% else %}
+    <h3 class="incomplete">Incomplete</h3>
+{% endif %}
+
+<div><p class="description">{{ todo_item.description }}</p></div>
