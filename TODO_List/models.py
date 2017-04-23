@@ -1,13 +1,14 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 
 PRIORITIES = (
-    ('HIG', 'high'),
-    ('MED', 'medium'),
-    ('LOW', 'low'),
+    ('HIG', 'High'),
+    ('MED', 'Medium'),
+    ('LOW', 'Low'),
 )
 
 class TODO_Item(models.Model):
@@ -19,3 +20,9 @@ class TODO_Item(models.Model):
     
     def __str__(self):
         return self.title
+        
+        
+class TODO_Item_Form(ModelForm):
+    class Meta:
+        model = TODO_Item
+        fields = ['title', 'due_date', 'priority', 'description', 'isComplete']
