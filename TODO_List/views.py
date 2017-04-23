@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 from .models import TODO_Item, TODO_Item_Form
 
@@ -28,9 +29,8 @@ def new(request):
         form = TODO_Item_Form(request.POST)
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('TODO_List:index')
+            form.save()
+            return HttpResponseRedirect(reverse('TODO_List:index'))
     else:
         form = TODO_Item_Form()
     
