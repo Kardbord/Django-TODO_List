@@ -11,7 +11,7 @@ PRIORITIES = (
 )
 
 class TODO_Item(models.Model):
-    description = models.TextField('Description', max_length=300)
+    description = models.TextField('Description', max_length=500)
     title = models.CharField('Title', max_length=100)
     due_date = models.DateTimeField('Due Date')
     isComplete = models.BooleanField('is completed', default=False)
