@@ -9,3 +9,11 @@
 .low {
     color: blue;
 }
+
+.completed {
+    color: green;
+}
+
+.incomplete {
+    color: red;
+}
