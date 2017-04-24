@@ -1,3 +1,15 @@
 body {
-    background: orange;
+    background: purple;
+}
+
+.high {
+    color: red;
+}
+
+.med {
+    color: orange;
+}
+
+.low {
+    color: blue;
 }

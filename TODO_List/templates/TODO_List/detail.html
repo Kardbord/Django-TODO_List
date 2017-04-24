@@ -7,11 +7,11 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 {% if todo_item.priority == "HIG" %}
-    <h2 class="High">!!!High Priority!!!</h2>
+    <h2 class="high">!!!High Priority!!!</h2>
 {% elif todo_item.priority == "MED" %}
-    <h2 class="Med">***Medium Priority***</h2>
+    <h2 class="med">***Medium Priority***</h2>
 {% elif todo_item.priority == "LOW" %}
-    <h2 class="Low">Low Priority</h2>
+    <h2 class="low">Low Priority</h2>
 {% endif %}
 
 <h3>Due on {{ todo_item.due_date }}</h3>
