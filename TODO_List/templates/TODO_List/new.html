@@ -1,3 +1,7 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'TODO_List/style.css' %}" />
+
 <form action="{% url 'TODO_List:new' %}" method="post">
     {% csrf_token %}
     {{ form }}

@@ -1,3 +1,7 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'TODO_List/style.css' %}" />
+
 <h3><a href="{% url 'TODO_List:new' %}">+New Item</a></h3>
 
 {% if todo_list %}
