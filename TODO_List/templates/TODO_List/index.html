@@ -2,12 +2,16 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'TODO_List/style.css' %}" />
 
-<h3><a href="{% url 'TODO_List:new' %}">+New Item</a></h3>
+<head><title>TODO List</title></head>
+
+<h1 class="header">TODO:</h1>
+
+<h3 class="new"><a href="{% url 'TODO_List:new' %}">+New Task</a></h3>
 
 {% if todo_list %}
     <ul>
     {% for todo_item in todo_list %}
-        <li><a href="{% url 'TODO_List:detail' todo_item.id %}">{{ todo_item.title }}</a></li>
+        <li class="todolist"><a href="{% url 'TODO_List:detail' todo_item.id %}">{{ todo_item.title }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

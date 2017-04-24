@@ -2,6 +2,8 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'TODO_List/style.css' %}" />
 
+<head><title>TODO: {{ todo_item.title }}</title></head>
+
 <h1>{{ todo_item.title }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -17,7 +19,7 @@
 <h3>Due on {{ todo_item.due_date }}</h3>
 
 <!-- TODO: get this working! -->
-{% if todo_item.isCompleted %}
+{% if todo_item.isCompleted == true %}
     <h3 class="completed">Completed</h3>
 {% else %}
     <h3 class="incomplete">Incomplete</h3>

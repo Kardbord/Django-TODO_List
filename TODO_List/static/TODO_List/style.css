@@ -17,3 +17,26 @@
 .incomplete {
     color: red;
 }
+
+.todolist {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 50px;
+}
+
+.new {
+    text-align: right;
+    margin-right: 80px
+}
+
+.header {
+    text-align: center;
+}
+
+body {
+    background: white url("images/background.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

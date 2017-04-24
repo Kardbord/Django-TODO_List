@@ -2,6 +2,8 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'TODO_List/style.css' %}" />
 
+<head><title>New Task</title></head>
+
 <form action="{% url 'TODO_List:new' %}" method="post">
     {% csrf_token %}
     {{ form }}
