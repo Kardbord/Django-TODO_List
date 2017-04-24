@@ -5,9 +5,14 @@
 <head><title>New Task</title></head>
 
 <form action="{% url 'TODO_List:new' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
+{% csrf_token %}
+    {% for field in form %}
+        <div class="formdiv">
+            <div><label>{{ field.label }}</label></div>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <input class ="submit" type="submit" value="Submit" />
 </form>
 
 <div class="cancel"><a href="{% url 'TODO_List:index' %}">Cancel</a></div>
