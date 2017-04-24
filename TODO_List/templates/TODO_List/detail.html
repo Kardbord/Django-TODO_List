@@ -4,7 +4,7 @@
 
 <head><title>TODO: {{ todo_item.title }}</title></head>
 
-<h1>{{ todo_item.title }}</h1>
+<h1 class="header">{{ todo_item.title }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -16,7 +16,7 @@
     <h2 class="low">Low Priority</h2>
 {% endif %}
 
-<h3>Due on {{ todo_item.due_date }}</h3>
+<h3 class="duedate">Due on {{ todo_item.due_date }}</h3>
 
 <!-- TODO: get this working! -->
 {% if todo_item.isCompleted == true %}

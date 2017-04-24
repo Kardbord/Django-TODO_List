@@ -1,23 +1,47 @@
+/* detail.html */
 .high {
     color: red;
+    margin-left: 80px;
 }
 
 .med {
     color: orange;
+    margin-left: 80px;
 }
 
 .low {
     color: blue;
+    margin-left: 80px;
 }
 
 .completed {
     color: green;
+    margin-left: 80px;
 }
 
 .incomplete {
     color: red;
+    margin-left: 80px;
 }
 
+.duedate {
+    margin-left: 80px;
+}
+
+.description {
+    margin-left: 80px;
+}
+
+.header {
+    margin-left: 80px;
+}
+
+.home {
+    margin-left: 80px;
+}
+/* end detail.html */
+
+/* index.html */
 .todolist {
     padding-bottom: 10px;
     padding-top: 10px;
@@ -29,10 +53,12 @@
     margin-right: 80px
 }
 
-.header {
+.mainTitle {
     text-align: center;
 }
+/* end index.html */
 
+/* All */
 body {
     background: white url("images/background.jpeg") no-repeat center center fixed;
     -webkit-background-size: cover;
