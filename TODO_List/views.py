@@ -24,17 +24,20 @@ def detail(request, todo_id):
     
     
     
-def new(request):
-    if request.method == 'POST':
-        form = TODO_Item_Form(request.POST)
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            form.save()
-            return HttpResponseRedirect(reverse('TODO_List:index'))
+def edit(request, todo_id=None, template_name="TODO_List/edit.html"):
+    if todo_id:
+        todo = get_object_or_404(TODO_Item, pk=todo_id)
     else:
-        form = TODO_Item_Form()
-    
-    return render(request, 'TODO_List/new.html', {'form': form})
+        todo = TODO_Item()
+
+    form = TODO_Item_Form(request.POST or None, instance=todo)
+    if request.POST and form.is_valid():
+        form.save()
+
+        # Save was successful, so redirect to another page
+        return HttpResponseRedirect(reverse('TODO_List:index'))
+
+    return render(request, template_name, { 'form': form })
     
 def delete(request, todo_id):
     todo = get_object_or_404(TODO_Item, pk=todo_id)

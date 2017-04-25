@@ -28,7 +28,7 @@
 <div><p class="description">{{ todo_item.description }}</p></div>
 
 <div class="options">
-    <a class="option" href="{% url 'TODO_List:new' %}">Edit</a>
+    <a class="option" href="{% url 'TODO_List:edit' todo_item.id %}">Edit</a>
     <form class="option" action="{% url 'TODO_List:delete' todo_item.id %}" method="post">
         {% csrf_token %}
         <input type="submit" value="Delete" />
