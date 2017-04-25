@@ -35,3 +35,8 @@ def new(request):
         form = TODO_Item_Form()
     
     return render(request, 'TODO_List/new.html', {'form': form})
+    
+def delete(request, todo_id):
+    todo = get_object_or_404(TODO_Item, pk=todo_id)
+    todo.delete()
+    return HttpResponseRedirect(reverse('TODO_List:index'))
