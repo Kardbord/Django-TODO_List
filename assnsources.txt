@@ -1,3 +1,5 @@
 http://gregblogs.com/the-little-things-tlt-django-creating-a-drop-down-list-with-django/
 
 http://stackoverflow.com/questions/1854237/django-edit-form-based-on-add-form
+
+https://docs.djangoproject.com/en/1.11/intro/tutorial01/
