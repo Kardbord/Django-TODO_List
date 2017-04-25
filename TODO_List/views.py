@@ -37,7 +37,7 @@ def edit(request, todo_id=None, template_name="TODO_List/edit.html"):
         # Save was successful, so redirect to another page
         return HttpResponseRedirect(reverse('TODO_List:index'))
 
-    return render(request, template_name, { 'form': form })
+    return render(request, template_name, { 'form': form, 'todo_id' : todo.id })
     
 def delete(request, todo_id):
     todo = get_object_or_404(TODO_Item, pk=todo_id)
