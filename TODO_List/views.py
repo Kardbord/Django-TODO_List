@@ -35,7 +35,7 @@ def edit(request, todo_id=None, template_name="TODO_List/edit.html"):
         form.save()
 
         # Save was successful, so redirect to another page
-        return HttpResponseRedirect(reverse('TODO_List:index'))
+        return HttpResponseRedirect(reverse('TODO_List:detail', kwargs={'todo_id' : todo.id}))
 
     return render(request, template_name, { 'form': form, 'todo_id' : todo.id })
     
