@@ -19,7 +19,7 @@
 <h3 class="duedate">Due on {{ todo_item.due_date }}</h3>
 
 <!-- TODO: get this working! -->
-{% if todo_item.isCompleted == true %}
+{% if todo_item.isComplete %}
     <h3 class="completed">Completed</h3>
 {% else %}
     <h3 class="incomplete">Incomplete</h3>
