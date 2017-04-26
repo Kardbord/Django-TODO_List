@@ -67,15 +67,18 @@
     padding-bottom: 10px;
     padding-top: 10px;
     margin-left: 50px;
+    font-size: 20px;
 }
 
 .new {
     text-align: right;
-    margin-right: 80px
+    margin-right: 80px;
+    font-size: 26px;
 }
 
 .mainTitle {
     text-align: center;
+    font-size: 40px;
 }
 /* end index.html */
 
@@ -86,4 +89,5 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: Bookman Old Style;
 }
