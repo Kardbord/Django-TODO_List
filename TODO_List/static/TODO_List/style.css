@@ -88,7 +88,8 @@
 }
 
 .nagoptions {
-    text-align: center;
+    text-align: right;
+    margin-right: 80px;
 }
 /* end index.html */
 

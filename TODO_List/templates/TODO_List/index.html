@@ -11,6 +11,17 @@
 
 <h3 class="new"><a href="{% url 'TODO_List:new' %}">+New Task</a></h3>
 
+<form class="nagoptions">
+    <div>
+        
+            <p>Nag if more than 5 TODOs are present.</p>
+        
+        <label>
+            <input type="range" min="0" max="10" value="5" onchange="updateTextAndNag(this)">
+        </label>
+    </div>
+</form>
+
 {% if todo_list %}
 <ul>
     {% for todo_item in todo_list %}
@@ -21,13 +32,4 @@
 <p class="todolist">You have nothing to do! :)</p>
 {% endif %}
 
-<form class="nagoptions">
-    <div>
-        <div>
-            <p>Nag if more than 5 TODOs are present.<p>
-        </div>
-        <label>
-            <input type="range" min="0" max="10" value="5" onchange="updateTextAndNag(this)">
-        </label>
-    </div>
-</form>
+

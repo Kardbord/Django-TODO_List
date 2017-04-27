@@ -8,7 +8,7 @@ function nag(nagThreshold) {
         p.setAttribute("class", "nag");
         
         div.appendChild(p);
-        document.getElementsByClassName('nagoptions')[0].prepend(div);
+        document.body.appendChild(div);
     }
 }
 
