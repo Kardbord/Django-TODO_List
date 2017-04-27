@@ -12,7 +12,7 @@ function nag(nagThreshold) {
     }
 }
 
-function updateText(node) {
+function updateText() {
     
     var forms = document.getElementsByClassName('nagoptions');
     var p = forms[0].getElementsByTagName('p');
@@ -21,16 +21,18 @@ function updateText(node) {
     return slider[0].value;
 }
 
-function updateTextAndNag(node) {
+function updateTextAndNag() {
     var theNag = document.getElementsByClassName('nag');
     if (theNag.length > 0) {
         theNag[0].remove();
     }
     
-    var threshold = updateText(node);
+    var threshold = updateText();
     nag(threshold);
 }
 
 window.onload = function() {
-    nag(5);
+    var forms = document.getElementsByClassName('nagoptions');
+    var sliders = forms[0].getElementsByTagName('input');
+    updateTextAndNag();
 }
