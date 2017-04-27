@@ -3,18 +3,29 @@
 <link rel="stylesheet" type="text/css" href="{% static 'TODO_List/style.css' %}" />
 <script src="{% static 'TODO_List/script.js' %}" type="text/javascript"></script>
 
-<head><title>TODO List</title></head>
+<head>
+    <title>TODO List</title>
+</head>
 
 <h1 class="mainTitle">TODO:</h1>
 
 <h3 class="new"><a href="{% url 'TODO_List:new' %}">+New Task</a></h3>
 
 {% if todo_list %}
-    <ul>
+<ul>
     {% for todo_item in todo_list %}
-        <li class="todolist"><a href="{% url 'TODO_List:detail' todo_item.id %}">{{ todo_item.title }}</a></li>
+    <li class="todolist"><a href="{% url 'TODO_List:detail' todo_item.id %}">{{ todo_item.title }}</a></li>
     {% endfor %}
-    </ul>
+</ul>
 {% else %}
-    <p class="todolist">You have nothing to do! :)</p>
+<p class="todolist">You have nothing to do! :)</p>
 {% endif %}
+
+<form class="nagoptions">
+    <div>
+        <label>
+            <input type="range" min="0" max="10" value="5" onchange="updateButton(this)">
+        </label>
+    </div>
+    <div><button type="button" onclick="buttonPressed(this)">Nag if more than 5 TODOs are present.</button></div>
+</form>
