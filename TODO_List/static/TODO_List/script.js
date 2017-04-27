@@ -8,15 +8,27 @@ function nag(nagThreshold) {
         p.setAttribute("class", "nag");
         
         div.appendChild(p);
-        document.body.appendChild(div);
+        document.getElementsByClassName('nagoptions')[0].prepend(div);
     }
 }
 
-function updateButton(node) {
+function updateText(node) {
+    
     var forms = document.getElementsByClassName('nagoptions');
-    var button = forms[0].getElementsByTagName('button');
+    var p = forms[0].getElementsByTagName('p');
     var slider = forms[0].getElementsByTagName('input');
-    button[0].textContent = "Nag if more than " + slider[0].value + " TODOs are present.";
+    p[0].textContent = "Nag if more than " + slider[0].value + " TODOs are present.";
+    return slider[0].value;
+}
+
+function updateTextAndNag(node) {
+    var theNag = document.getElementsByClassName('nag');
+    if (theNag.length > 0) {
+        theNag[0].remove();
+    }
+    
+    var threshold = updateText(node);
+    nag(threshold);
 }
 
 window.onload = function() {

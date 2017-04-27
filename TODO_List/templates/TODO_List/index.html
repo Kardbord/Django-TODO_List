@@ -23,9 +23,11 @@
 
 <form class="nagoptions">
     <div>
+        <div>
+            <p>Nag if more than 5 TODOs are present.<p>
+        </div>
         <label>
-            <input type="range" min="0" max="10" value="5" onchange="updateButton(this)">
+            <input type="range" min="0" max="10" value="5" onchange="updateTextAndNag(this)">
         </label>
     </div>
-    <div><button type="button" onclick="buttonPressed(this)">Nag if more than 5 TODOs are present.</button></div>
 </form>
